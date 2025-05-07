@@ -1,0 +1,34 @@
+
+<!-- procesos.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Agenda de Procesos</title>
+        <link rel="icon" href="/img/barrica_rosa.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="css/procesos.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Agenda de Procesos</h1>
+            <div class="date-picker">
+                <button id="prev-day">&lt;</button>
+                <span id="selected-date"></span>
+                <button id="next-day">&gt;</button>
+            </div>
+            
+            <div class="task-assigner">
+                <input type="text" id="task-name" placeholder="Nombre del proceso">
+                <button id="add-task">Asignar tarea</button>
+            </div>
+            
+            <h2>Procesos agendados</h2>
+            <div id="task-list" class="task-list">
+                <p>No hay tareas asignadas para este día.</p>
+            </div>
+        </div>
+    </body>
+    <script src="js/procesos.js"></script>
+</html>

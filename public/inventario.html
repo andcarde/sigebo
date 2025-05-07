@@ -1,0 +1,328 @@
+
+<!-- inventario.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SIGEBO  |  Inventario</title>
+        <link rel="icon" href="/img/barrica_rosa.ico" type="image/x-icon" />
+        <link type="text/css" rel="stylesheet" href="css/config1/general.css" />
+        <link type="text/css" rel="stylesheet" href="css/config1/navbar.css" />
+        <link type="text/css" rel="stylesheet" href="css/inventario.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div id="navbar"><!-- Dinamically completed --></div>
+            <div class="row title">
+                <div class="offset-5 col col-2">
+                    <h1 class="text-center fs-2">Inventario</h1>
+                </div>
+                <div class="col col-4 d-flex justify-content-center">
+                    <button class="btn btn-secondary" id="move-modal-btn" data-bs-toggle="modal" data-bs-target="#move-modal">
+                        <p id="mover-text">Mover</p>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-2 d-flex">
+                    <button class="sub-btn" id="nueva-entrada-btn" data-bs-toggle="modal" data-bs-target="#entrada-uva-modal">
+                        <p>Nueva Entrada de Uva</p>
+                    </button>
+                </div>
+            </div>
+            <table class="table table-bordered mt-5">
+                <thead class="table-light">
+                    <tr>
+                        <th colspan="5" class="text-center fs-4 table-caption">Depósitos</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">DEPÓSITO</th>
+                        <th scope="col">LOTE</th>
+                        <th scope="col">VOLUMEN</th>
+                        <th scope="col">MÁX. VOLUMEN</th>
+                        <th scope="col">ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody id="deposits"></tbody>
+                <tr>
+                    <td colspan="5" class="text-center more-rows-btn">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#createDeposit-modal">
+                            Más Depósitos
+                        </button>
+                    </td>
+                </tr>
+            </table>
+            <table class="table table-bordered mt-4">
+                <thead class="table-light">
+                    <tr>
+                        <th colspan="5" class="text-center fs-4 table-caption">Barricas</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">BARRICA</th>
+                        <th scope="col">LOTE</th>
+                        <th scope="col">VOLUMEN</th>
+                        <th scope="col">MÁX. VOLUMEN</th>
+                        <th scope="col">ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody  id="barrels"></tbody>
+                <tr>
+                    <td colspan="5" class="text-center more-rows-btn">
+                        <button id="barrel-show">
+                            Más Barricas
+                        </button>
+                    </td>
+                </tr>
+            </table>
+            <table class="table table-bordered mt-4">
+                <thead class="table-light">
+                    <tr>
+                        <th colspan="3" class="text-center fs-4 table-caption">Botellas</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">LOTE</th>
+                        <th scope="col">CANTIDAD</th>
+                        <th scope="col">ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody  id="bottles"></tbody>
+            </table>
+        </div>
+    </body>
+
+    <!-- Modal: Move wine -->
+    <div class="modal fade" id="move-modal" tabindex="-1" aria-labelledby="moveModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="moveModalLabel">Mover</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="move-quantity" class="form-label">Cantidad:</label>
+                    <input type="text" id="move-quantity" name="move-quantity" class="form-control" placeholder="<nº litros>" 
+                        aria-label="Cantidad en litros" />
+                    <div id="move-error"></div>
+                    <div class="form-check mt-3" id="move-newDestinationBatch">
+                        <label for="move-newDestinationBatchName" class="form-label">Nombre del lote de destino:</label>
+                        <input type="text" id="move-newDestinationBatchName" name="destinationBatchName" class="form-control" placeholder="ejemplo: L2024/1" 
+                            aria-label="Nombre del lote de destino" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="move-btn">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Grape entry -->
+    <div class="modal fade" id="entrada-uva-modal" tabindex="-1" aria-labelledby="modalNuevaEntradaUvaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Título del Modal -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalNuevaEntradaUvaLabel">Nueva Entrada de Uva</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <!-- Contenido del Modal -->
+                <div class="modal-body">
+                    <!-- Primera Línea: Identificador -->
+                    <div class="row mb-3">
+                        <label class="mt-1 form-label col-auto">Identificador:</label>
+                        <div class="col">
+                            <input type="text" class="form-control text-center w-auto" placeholder="ejemplo: L2020/1" id="entry-name" maxlength="16">
+                        </div>
+                    </div>
+                    
+                    <!-- Segunda Línea: Depósito de destino -->
+                    <div class="row mb-3">
+                        <label class="mt-1 form-label col-auto">Depósito de entrada:</label>
+                        <div class="col">
+                            <input type="text" class="form-control text-center w-auto" placeholder="ejemplo: A01" id="entry-deposit" maxlength="16">
+                        </div>
+                    </div>
+
+                    <!-- Tercera Línea: Parcela y Detalles -->
+                    <div class="mb-3">
+                        <label class="form-label">Parcela:</label>
+                        <select class="form-select d-inline-block w-auto" id="selector-parcela">
+                            <!-- Las opciones de parcela se cargarán dinámicamente -->
+                        </select>
+                        <div id="parcela-detalles" class="d-inline-block ms-3">
+                            <!-- Superficie e ID se actualizarán dinámicamente -->
+                        </div>
+                    </div>
+
+                    <!-- Cuarta Línea: Cantidad y Variedad -->
+                    <div class="row mb-3">
+                        <div class="col-6 text-center">
+                            <label class="form-label">CANTIDAD</label>
+                        </div>
+                        <div class="col-6 text-center">
+                            <label class="form-label">VARIEDAD</label>
+                        </div>
+                    </div>
+
+                    <!-- Cuarta Línea: Campo de Cantidad y Selector de Variedad -->
+                    <div id="variedades-container">
+                        <!-- Los pares de variedad se cargarán dinámicamente -->
+                    </div>
+                </div>
+                
+                <!-- Footer del Modal: Botones Confirmar y Cancelar -->
+                <div class="modal-footer">
+                    <div class="row w-100">
+                        <div class="col-6 text-center">
+                            <button type="button" class="btn btn-primary col-8" id="nueva-entrada-uva-confirmar" disabled>
+                                Confirmar
+                            </button>
+                        </div>
+                        <div class="col-6 text-center">
+                            <button type="button" class="btn btn-danger col-8" id="nueva-entrada-uva-cancelar" data-bs-dismiss="modal">
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Create deposit -->
+    <div class="modal fade" id="createDeposit-modal" tabindex="-1" aria-labelledby="createDeposit-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createDeposit-label">Nuevo Depósito</h5>
+                    <button type="button" class="btn-close createDeposit-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body">
+                    <form>
+                        <!-- Capacidad -->
+                        <div class="mb-3">
+                            <label for="capacity" class="form-label">Capacidad</label>
+                            <input type="number" class="form-control" id="createDeposit-capacity" name="capacity" min="1" max="10000000" required>
+                            <div class="invalid-feedback">Campo obligatorio. Capacidad máxima: 10 millones de litros.</div>
+                        </div>
+                        <!-- Diámetro de la base -->
+                        <div class="mb-3">
+                            <label for="baseDiameter" class="form-label">Diámetro de la Base</label>
+                            <input type="number" class="form-control" id="createDeposit-baseDiameter" name="baseDiameter" min="0.01" step="0.01">
+                            <div class="invalid-feedback">Medido en metros. Máxima precisión de 2 decimales.</div>
+                        </div>
+                        <!-- Fecha de fabricación -->
+                        <div class="mb-3">
+                            <label for="manufacturerDate" class="form-label">Fecha de Fabricación</label>
+                            <input type="date" class="form-control" id="createDeposit-manufacturerDate" name="manufacturerDate">
+                        </div>
+                        <!-- Fabricante -->
+                        <div class="mb-3">
+                            <label for="manufacturer" class="form-label">Fabricante</label>
+                            <input type="text" class="form-control" id="createDeposit-manufacturer" name="manufacturer" maxlength="32">
+                        </div>
+                        <!-- Fecha de compra -->
+                        <div class="mb-3">
+                            <label for="purchaseDate" class="form-label">Fecha de Compra</label>
+                            <input type="date" class="form-control" id="createDeposit-purchaseDate" name="purchaseDate">
+                        </div>
+                        <!-- Vendedor -->
+                        <div class="mb-3">
+                            <label for="vendor" class="form-label">Vendedor</label>
+                            <input type="text" class="form-control" id="createDeposit-vendor" name="vendor" maxlength="32">
+                        </div>
+                        <!-- Añadido Múltiple -->
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="createDeposit-multiple" name="multiple">
+                            <!-- Create Deposit Multiple Add Check -->
+                            <label class="form-check-label" for="multiple">Añadido Múltiple</label>
+                        </div>
+
+                        <!-- Nombre -->
+                        <div class="mb-3" id="createDeposit-singleField">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="createDeposit-name" name="name" maxlength="32">
+                            <div class="invalid-feedback">Campo obligatorio.</div>
+                        </div>
+
+                        <!-- Create Deposit Multiple Add Fields -->
+                        <div id="createDeposit-multipleFields">
+                            <!-- Serie -->
+                            <div class="mb-3">
+                                <label for="serie" class="form-label">Serie</label>
+                                <input type="text" class="form-control" id="createDeposit-serie" name="serie" maxlength="32">
+                                <div class="invalid-feedback">Campo obligatorio.</div>
+                            </div>
+                            <!-- Quantity -->
+                            <div class="mb-3">
+                                <label for="quantity" class="form-label">Quantity</label>
+                                <input type="number" class="form-control" id="createDeposit-quantity" name="quantity" min="1">
+                                <div class="invalid-feedback">Campo obligatorio.</div>
+                            </div>
+                            <!-- Primer ID -->
+                            <div class="mb-3">
+                                <label for="firstIdNumber" class="form-label">Primer ID</label>
+                                <input type="number" class="form-control" id="createDeposit-firstIdNumber" name="firstIdNumber" min="0">
+                                <div class="invalid-feedback">Campo obligatorio.</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary createDeposit-close" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="createDeposit-petition">Añadir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"
+    ></script>
+
+    <!-- Bootstrap -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous">
+    </script>
+
+    <!-- · Utils -->
+    <!-- requirements: jQuery -->
+    <script src="js/log-utils.js"></script>
+    <!-- requirements: jQuery -->
+    <script src="js/section-utils.js"></script>
+    <script src="js/modal-error.js"></script>
+    <script src="js/input-pair.js"></script>
+
+    <!-- · Main scripts -->
+    <!-- requirements: jQuery, './section-utils.js', './log-utils.js', './inventario.js' -->
+    <script src="js/entrada-uva.js"></script>
+    <!-- requirements: jQuery -->
+    <script src="js/navbar.js"></script>
+    <!-- requirements: jQuery -->
+    <script src="js/inventario.js"></script>
+    <!-- requirements: jQuery, './section-utils.js', './log-utils.js', './inventario.js' -->
+    <script src="js/deposits.js"></script>
+    <!-- requirements: jQuery, './inventario.js', './deposits.js' -->
+    <script src="js/barrels.js"></script>
+    <!-- requirements: jQuery, './section-utils.js', './input-pair.js' -->
+    <script src="js/analytics.js"></script>
+    <!-- requirements: jQuery,  './modal-error.js', './section-utils.js', './inventario.js' -->
+    <script src="js/embotellado.js"></script>
+    <!-- requirements: jQuery,  './modal-error.js', './section-utils.js', './inventario.js' -->
+    <script src="js/outwine.js"></script>
+
+    <!-- · Deprecated -->
+    <!-- requirements: jQuery -->
+    <script src="js/validacion-deposito.js"></script>
+</html>

@@ -1,0 +1,113 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="Página-1" id="IaqvEgD6K_qltB-yoOlc">
+    <mxGraphModel dx="1219" dy="722" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="9J1i1mogz6fs0ltKJi9Q-1" target="9J1i1mogz6fs0ltKJi9Q-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-1" value="Entrada de Uva" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-2" value="Enólogo" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="889" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="9J1i1mogz6fs0ltKJi9Q-3" target="9J1i1mogz6fs0ltKJi9Q-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-14" value="Vinos jóvenes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="9J1i1mogz6fs0ltKJi9Q-9">
+          <mxGeometry x="-0.1903" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="9J1i1mogz6fs0ltKJi9Q-3" target="9J1i1mogz6fs0ltKJi9Q-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-3" value="Transferencia a depósito" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9J1i1mogz6fs0ltKJi9Q-4" target="9J1i1mogz6fs0ltKJi9Q-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-23" value="Vinos viejos" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="9J1i1mogz6fs0ltKJi9Q-11">
+          <mxGeometry x="-0.4176" y="-1" relative="1" as="geometry">
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-4" value="Transferencia a barrica" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-5" value="Analítica" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="749" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="9J1i1mogz6fs0ltKJi9Q-6" target="9J1i1mogz6fs0ltKJi9Q-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-6" value="Embotellamiento" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-8" value="Salida de vino" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-18" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9J1i1mogz6fs0ltKJi9Q-2" target="9J1i1mogz6fs0ltKJi9Q-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="345" y="679" as="sourcePoint" />
+            <mxPoint x="345" y="919" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-28" value="ordena" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="9J1i1mogz6fs0ltKJi9Q-18">
+          <mxGeometry x="0.1762" y="-4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-21" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="9J1i1mogz6fs0ltKJi9Q-5" target="9J1i1mogz6fs0ltKJi9Q-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-35" y="729" as="sourcePoint" />
+            <mxPoint x="15" y="679" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="505" y="859" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-22" value="interpretada por" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="9J1i1mogz6fs0ltKJi9Q-21">
+          <mxGeometry x="0.5971" y="-7" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-24" value="Contenedores: barrica y depósitos" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="215" y="749" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-25" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9J1i1mogz6fs0ltKJi9Q-24" target="9J1i1mogz6fs0ltKJi9Q-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="385" y="769" as="sourcePoint" />
+            <mxPoint x="435" y="719" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-26" value="genera" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="9J1i1mogz6fs0ltKJi9Q-25">
+          <mxGeometry x="0.2892" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-27" value="Operación correctiva" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="215" y="889" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-29" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="9J1i1mogz6fs0ltKJi9Q-27" target="9J1i1mogz6fs0ltKJi9Q-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="335" y="849" as="sourcePoint" />
+            <mxPoint x="445" y="849" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9J1i1mogz6fs0ltKJi9Q-30" value="aplica" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="9J1i1mogz6fs0ltKJi9Q-29">
+          <mxGeometry x="0.2892" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

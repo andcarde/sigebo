@@ -1,0 +1,74 @@
+
+/* trazabilidad.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+.container {
+    max-width: 90%;
+}
+.card {
+    border-radius: 10px;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+}
+.lot-info {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.lot-section .alert {
+    font-size: 0.9rem;
+    padding: 10px;
+}
+.alert-warning {
+    background-color: #fef4b2;
+}
+.alert-secondary {
+    background-color: #d8b2f2;
+}
+.alert-info {
+    background-color: #b2d8f2;
+}
+.alert-success {
+    background-color: #c4f2b2;
+}
+.ms-2 {
+    margin-left: 10px;
+}
+.ms-4 {
+    margin-left: 20px;
+}
+.ms-5 {
+    margin-left: 40px;
+}
+.ms-6 {
+    margin-left: 60px;
+}
+.lot-section .alert i {
+    margin-right: 8px;
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+.end {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: end;
+}
+#traze-search {
+    margin-top: 2rem;
+    width: 10rem;
+}
+.sml {
+    margin-left: 100px !important;
+}
+
+@media (max-width: 767px) {
+    #traze-search {
+        margin-top: 1rem;
+    }
+    #idLabel {
+        margin-top: 1rem;
+    }
+}

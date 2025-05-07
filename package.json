@@ -1,0 +1,28 @@
+{
+  "name": "sigebo",
+  "version": "1.0.0",
+  "description": "Sigebo is a web application for a integral management of a wine enterprise.",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "wine",
+    "management"
+  ],
+  "author": "Andrés Cardenal Antón",
+  "license": "MIT",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "express-mysql-session": "^3.0.3",
+    "express-session": "^1.18.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "mocha": "^11.0.1"
+  }
+}

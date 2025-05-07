@@ -1,0 +1,12 @@
+
+/* inline.css */
+
+.inline-p {
+    display: inline;
+}
+.inline-block-p {
+    display: inline-block;
+}
+.no-underline {
+    text-decoration: none;
+}

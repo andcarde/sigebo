@@ -1,0 +1,61 @@
+
+<!-- bodegas.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SIGEBO  |  Bodegas</title>
+        <link rel="icon" href="/img/barrica_rosa.ico" type="image/x-icon" />
+        <link type="text/css" rel="stylesheet" href="css/config1/general.css" />
+        <link type="text/css" rel="stylesheet" href="css/config1/navbar.css" />
+        <link type="text/css" rel="stylesheet" href="css/bodegas.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div id="navbar"><!-- Dinamically completed --></div>
+            <div class="row title">
+                <!-- <div class="col text-center"> -->
+                <div class="offset-5 col-2 text-center">
+                    <h1 class="fs-2">Bodegas</h1>
+                </div>
+            </div>
+            <div class="row mt-3" id="winerys">
+                <!-- Las cards se cargarán dinámicamente -->
+            </div>
+            <!-- Button trigger modal -->
+            <div class="text-center col-8 offset-2">
+                <button type="button" class="btn btn-primary mt-2" id="winery-show">Crear Bodega</button>
+            </div>
+        </div>
+    </body>
+
+    <!-- jQuery -->
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"
+    ></script>
+
+    <!-- Bootstrap -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous">
+    </script>
+
+    <!-- · Utils -->
+    <script src="js/log-utils.js"></script>
+    <script src="js/validation-utils.js"></script>
+    <script src="js/modal-error.js"></script>
+
+    <!-- · Main scripts -->
+    <!-- requirements: jQuery -->
+    <script src="js/navbar.js"></script>
+    <!-- requirements: jQuery -->
+    <script src="js/container.js"></script>
+    <!-- requirements: './log-utils.js', './modal-error.js', './validate-utils.js' -->
+    <script src="js/bodegas.js"></script>
+</html>

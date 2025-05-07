@@ -1,0 +1,15 @@
+/* Estilos para anchors */
+.no-underline {
+    text-decoration: none;
+}
+
+/* Estilos alerta */
+
+#failedAlert {
+    display: none;
+}
+
+/* Estilos para forms */
+.form-group {
+    margin-top: 10px;
+}

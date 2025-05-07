@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SIGEBO  |  Modal Test</title>
+        <link type="text/css" rel="stylesheet" href="css/config2/general.css" />
+        <link type="text/css" rel="stylesheet" href="css/config2/navbar.css" />
+        <link type="text/css" rel="stylesheet" href="css/parcelas.css" />
+        <link type="text/css" rel="stylesheet" href="css/nueva-parcela.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <ul data-page="inicio">
+                    <a href="/"><p>INICIO</p></a>
+                </ul>
+                <ul data-page="inventario">
+                    <a href="/inventario"><p>INVENTARIO</p></a>
+                </ul>
+                <ul data-page="busqueda">
+                    <button><p>BÚSQUEDA</p></button>
+                </ul>
+                <ul data-page="parcelas">
+                    <a href="/parcelas"><p>PARCELAS</p></a>
+                </ul>
+                <ul data-page="bodega">
+                    <a href="/bodega"><p>BODEGA</p></a>
+                </ul>
+                <ul class="nav-elem-close-session">
+                    <a href="/"><p>CERRAR SESIÓN</p></a>
+                </ul>
+            </nav>
+            <div class="row title">
+                <div class="offset-4 col col-4">
+                    <h1 class="text-center fs-2">Test de ventanas modales</h1>
+                </div>
+            </div>
+            <div id="content">
+                <div class="action-buttons">
+                    <button>
+                        Nuevo Grupo
+                    </button>
+                    <button id="nueva-parcela-btn" data-bs-toggle="modal" data-bs-target="#modal-nueva-parcela">
+                        Nueva Parcela
+                    </button>
+                </div>
+            </content>
+        </div>
+    </body>
+    <!-- Modal Nueva Parcela -->
+    <div class="modal fade" id="modal-nueva-parcela" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Nueva Parcela</h5>
+                    <button type="button" class="btn-close nueva-parcela-modal-close-btn" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Campo ID -->
+                    <label for="parcela-id">ID</label>
+                    <input type="text" id="parcela-id" placeholder="ID" class="form-control" required>
+                    <span id="id-error" class="error-message text-danger"></span>
+    
+                    <!-- Campo Alias -->
+                    <label for="parcela-alias">Alias</label>
+                    <input type="text" id="parcela-alias" placeholder="Alias" class="form-control">
+    
+                    <!-- Campos de Cantidad y Variedad -->
+                    <div id="cantidad-variedad-container">
+                        <div class="row">
+                            <div class="col-6">Superficie</div>
+                            <div class="col-6">Variedad</div>
+                        </div>
+                        <div class="cantidad-variedad-row">
+                            <input type="number" class="cantidad-input" min="1" placeholder="Superficie (ha)">
+                            <select class="form-select" size="2">
+                                <option value="albillo">Albillo</option>
+                                <option value="maturana">Maturana</option>
+                                <option value="merlot">Merlot</option>
+                                <option value="tempranillo">Tempranillo</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" id="confirmar-button" disabled>Confirmar</button>
+                    <button type="button" class="btn nueva-parcela-modal-close-btn">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+    ></script>
+    <script src="js/nabvar.js"></script>
+    <script src="js/nueva-parcela.js"></script>
+</html>

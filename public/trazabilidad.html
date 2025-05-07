@@ -1,0 +1,142 @@
+
+<!-- trazabilidad.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SIGEBO | Trazabilidad</title>
+        <link rel="icon" href="/img/barrica_rosa.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="css/config1/navbar.css">
+        <link rel="stylesheet" href="css/trazabilidad.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <div class="container mt-4">
+            <div id="navbar"><!-- Dinamically completed --></div>
+            <h2 class="text-center">Trazabilidad</h2>
+
+            <!-- Search Box -->
+            <div class="card p-3 shadow-sm">
+                <div class="row">
+                    <div class="offset-md-2 col-md-3">
+                        <label id="search-label" for="searchType" class="form-label">Buscar por:</label>
+                        <select id="searchType" class="form-select">
+                            <option value="Lote" selected>Lote</option>
+                            <option value="Contenedor">Contenedor</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label id="idLabel" for="lote" class="form-label">ID Lote:</label>
+                        <input type="text" id="lote" class="form-control">
+                    </div>
+                    <div class="col-md-2">
+                        <button id="traze-search" class="btn btn-primary">Buscar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lote Info -->
+            <div class="alert alert-warning text-center mt-3">
+                <strong>Lote:</strong> L24 &nbsp; | &nbsp; <strong>Salida:</strong> 12/02/2025
+            </div>
+
+            <!-- Details -->
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card p-3 shadow-sm">
+                        <div class="fw-bold text-center">Operaciones</div>
+                        <div id="lot-section">
+                            <div class="alert alert-warning ms-2">
+                                <span>
+                                    <p class="d-inline">Salida de D1</p>
+                                    <p class="d-inline">&nbsp;&nbsp; - &nbsp;&nbsp;</p>
+                                    <p class="d-inline">3000 litros</p>
+                                    <p class="d-inline">&nbsp;&nbsp; - &nbsp;&nbsp;</p>
+                                    <p class="d-inline">02/02/2025</p>
+                                </span>
+                            </div>
+                            <div class="alert alert-secondary ms-4">
+                                <span>
+                                    <p class="d-inline">Movimiento de D3 a D1</p>
+                                    <p class="d-inline">&nbsp;&nbsp; - &nbsp;&nbsp;</p>
+                                    <p class="d-inline">2000 litros</p>
+                                    <p class="d-inline">&nbsp;&nbsp; - &nbsp;&nbsp;</p>
+                                    <p class="d-inline">04/11/2024</p>
+                                </span>
+                            </div>
+                            <div class="alert alert-success ms-5">
+                                Entrada a D3 - 1000 litros - 11/09/2024
+                            </div>
+                            <div class="alert alert-success ms-5">
+                                Entrada a D3 - 1000 litros - 12/09/2024
+                            </div>
+                            <div class="alert alert-secondary ms-4">
+                                Movimiento de D2 a D1 - 1000 litros - 08/12/2024
+                            </div>
+                            <div class="alert alert-info ms-5">
+                                Movimiento de D11 a D1 - 1000 litros - 02/12/2024
+                            </div>
+                            <div class="alert alert-success ms-6">
+                                Entrada a D11 - 1000 litros - 06/09/2024
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card p-3 shadow-sm mb-3">
+                        <strong>Variedades</strong>
+                        <ul id="variety-section"class="list-group">
+                            <li class="list-group-item">33.3% Albillo</li>
+                            <li class="list-group-item">50% Maturana Blanca</li>
+                            <li class="list-group-item">16.6% Chardonnay</li>
+                        </ul>
+                    </div>
+
+                    <div class="card p-3 shadow-sm">
+                        <strong>Parcelas</strong>
+                        <ul id="plot-section" class="list-group">
+                            <li class="list-group-item">Villafranca</li>
+                            <li class="list-group-item">Olmillos</li>
+                            <li class="list-group-item">Calabazas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- jQuery Cookie -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+        <!-- Bootstrap -->
+        <!-- <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous">
+        </script> -->
+
+        <!-- Bootstrap JS con Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- · Utils -->
+         ç<!-- requirements: Bootstrap -->
+        <script src="js/modal-error.js"></script>
+
+        <!-- · Main scripts -->
+        <!-- requirements: jQuery -->
+        <script src="js/navbar.js"></script>
+        <!-- requirements: jQuery,  './modal-error.js' -->
+        <script src="js/trazabilidad.js"></script>
+
+    </body>
+</html>

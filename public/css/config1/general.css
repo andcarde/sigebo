@@ -1,0 +1,36 @@
+
+/* config1-general.css */
+
+/* · Body */
+
+* {
+    padding: 0;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+.container {
+    background-color: #e3d9e9;
+    padding: 1rem 3rem 2rem 3rem !important;
+    max-width: 100% !important;
+}
+
+/* · Title */
+
+/* Title Div */
+.title {
+    border: 1px solid #000000;
+    background-color: white;
+    border-top: none;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    width: 100%;
+    margin: 0.1rem 0rem 0rem 0rem !important;
+}
+
+/* Title Text */
+.title h1 {
+    font-weight: 600 !important;
+}

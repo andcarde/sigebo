@@ -1,0 +1,41 @@
+
+/* register-box */
+
+/* Centering container */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+/* Registration box styling */
+.register-box {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust form labels and inputs */
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-group .form-control {
+    border-radius: 5px;
+}
+
+.input-group-text {
+    cursor: pointer;
+}
+
+/* Full-width button styling */
+#registrarse-btn {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+}

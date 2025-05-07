@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+h1 {
+    text-align: center;
+}
+.traceability {
+    margin: 20px auto;
+    max-width: 800px;
+}
+.section {
+    margin-bottom: 20px;
+}
+.section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.tree {
+    list-style-type: none;
+    padding-left: 20px;
+}
+.tree li {
+    margin: 5px 0;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}

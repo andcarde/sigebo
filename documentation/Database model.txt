@@ -1,0 +1,175 @@
+
+# Sigebo: A application for integral management of a wine enterprise
+# Trabajo de Fin de Grado (TFG)
+
+## Modelo Entidad-Relación
+
+En el presente documento se definen el modelo de la base de datos.
+
+# Lista de entidades
+
+Viña
+Operación
+Depósito
+Barrica
+Lote de vino
+Lote de botellas
+Empresa
+Bodega
+Usuario
+
+# Modelo de la base de datos
+
+Viña
+{
+    id : UNSIGNED_INT [AUTO_INCREMENT]
+}
+
+# Depósitos
+Depósito {
+    
+}
+
+# Barricas
+Barrica {
+    id : UNSIGNED_INT [AUTO_INCREMENT]
+}
+
+# Lotes de vino
+Lote de vino {
+    id : UNSIGNED_INT [AUTO_INCREMENT]
+}
+
+# Lotes de botellas
+Lote de botellas {
+    id : UNSIGNED_INT [AUTO_INCREMENT]
+}
+
+# Empresas
+Empresa {
+    id : UNSIGNED_INT [AUTO_INCREMENT]
+    nombre: VARCHAR2(32) [NOT NULL]
+}
+
+# Bodegas
+Bodega {
+    id : UNSIGNED_INT [AUTO_INCREMENT]
+    nombre: VARCHAR2(32) [NOT NULL]
+    administrador: int(10) [NOT NULL]
+    active: tinyint(1) [NOT NULL]
+}
+
+# Usuarios
+Usuario {
+    id : UNSIGNED_INT [AUTO_INCREMENT]
+    email: VARCHAR2(32) [NOT NULL]
+    password: VARCHAR2(32) [NOT NULL]
+    name: VARCAHR2(32) [NOT NULL]
+    surname: VARCHAR2(32) [NOT NULL]
+    surname2: VARCHAR2(32) [NULL]
+    active : TINY_INT(1) [NOT NULL] [Default: 1]
+}
+
+# Operaciones
+Operaciones {
+    id: INT(11) [Null: No] [Primary Key]
+    id_bodega: INT(11) [Null: No] [Foreing Key: Bodega.id]
+    id_usuario: INT(11) [Null: No] [Foreing Key: Usuario.id]
+    id_lote_origen: INT(11) [Null: Sí] [Foreing Key: Lote.id]
+    id_contenedor_origen: INT(11) [Null: Sí] [Foreing Key: Lote.id]
+    id_lote_destino: INT(11) [Null: Sí] [Foreing Key: Lote.id]
+    id_contenedor_destino: INT(11) [Null: Sí] [Foreing Key: Lote.id]
+    fecha: DATE [Null: No]
+    tipo: VARCHAR(32) [Null: No] [Enum: 'entrada', 'movimiento', 'salida']
+    volumen: INT(11) [Atributos: Unsigned]
+}
+
+# UCM_AW_RIU_INS_Instalaciones
+Instalacion {
+    id : UNSIGNED_INT [AUTO_INCREMENT]
+    nombre : VARCHAR2
+    tipo : INSTALACION
+    activo : TINY_INT(1)
+}
+
+enum INSTALACION = { "laboratorio", "sala_grado", "salon_actos", "sala_reunion" }
+
+# UCM_AW_RIU_RES_Reservas
+Reserva {
+    id [AUTO_INCREMENT] : INT
+    fecha (año/mes/dia/hora/minuto) : DATETIME
+    id_instalacion : Instacion.id [FOREIGN KEY]
+    nombre_instalacion : Instalacion.nombre [DESNORMALIZADO]
+    tipo_instalacion : Instalacion.tipo [DESNORMALIZADO]
+    id_usuario : Usuario.id [FOREIGN KEY]
+    prioridad: UNSIGNED_INT
+    activo : TINY_INT(1)
+}
+
+# UCM_AW_RIU_MEN_Mensajes
+Mensaje {
+    id [AUTO_INCREMENT] : INT
+    id_usuario_emisor : Usuario.id [FOREIGN KEY]
+    id_usuario_receptor : Usuario.id [FOREIGN KEY]
+    text: Varchar2[2048]
+    activo_emisor : TINY_INT(1)
+    activo_receptor : TINY_INT(1)
+}
+
+## Roles y Casos de uso
+
+Roles: Invitado, Usuario y Administrador.
+
+Casos de uso del Invitado:
+· Nota 5
+- Iniciar sesión a Usuario. Necesario correo y contraseña
+- Iniciar sesión a Administrador.
+- Registrar nuevo Usuario: Se añadirá la siguiente información de forma obligatoria: Correo, nombre, apellidos,
+facultad, curso, grupo, contraseña, repetir contraseña e imagen de perfil. Con un botón
+se deberá poder hacer la contraseña visible.
+- Reserva de instalaciones.
+
+Casos de uso del Sistema:
+· **Nota no especificada**: Nota 6
+- Enviar una notificación al primer usuario de la lista cuando haya habido alguna
+cancelación de reservas
+
+Casos de uso del Administrador:
+· **Nota no especificada**
+- Validar registros: **¿Acceso no disponible hasta la validación?**: Mensaje esperando validación
+- Gestionar instalaciones: **¿Eliminar instalación y modificarla?**: También ambas.
+- **Generar estadísticas de reservas por usuario y por facultad** : Para nota 10
+- **Asignar roles de administrador a usuarios específicos**
+- Acceder a estadística
+· Nota 5
+- Cerrar sesión: Necesario correo UCM y contraseña.
+- Acceder a Configuración del sistema: Se podrá modificar el nombre, **dirección física**: física e icono de la
+organización.
+- Creación de instalación.
+- Validación de usuario.
+- Historial de reservas de un
+usuario o de una instalación.
+· Nota 6
+- Enviar de correo de validación a usuario.
+- Enviar mensajes a cualquier
+usuario dentro de la misma Organización **¿Hay varias organizaciones?**: Podría hacer más de cara a la base de datos
+- Enviar mensajes a cualquier
+usuario dentro de la misma Facultad.
+· Nota 8
+- Generar listado de usuarios.
+- Generar listado de reservas.
+- Búsqueda avanzada: Estarán disponibles los siguientes filtros: nombre de usuario, apellido de usuario,
+fecha de inicio, fecha de fin, facultad e instalación.
+· Nota 10
+- Calendario interactivo de disponiblidad
+- Gestionar lista de espera
+
+Casos de uso del Usuario:
+- Cerrar sesión: Necesario correo UCM y contraseña.
+- Reservar instalaciones: Necesario introducir fecha y hora deseada.
+- Acceder a (o ver) sus correos electrónicos.
+· Nota 6
+- Envío de correo tanto al administrador
+como a cualquier otro usuario de la Organización.
+· Nota 10
+- Calendario interactivo de disponiblidad

@@ -1,0 +1,202 @@
+
+<!-- parcelas.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SIGEBO  |  Parcelas</title>
+        <link rel="icon" href="/img/barrica_rosa.ico" type="image/x-icon" />
+        <link type="text/css" rel="stylesheet" href="css/config2/general.css" />
+        <link type="text/css" rel="stylesheet" href="css/config2/navbar.css" />
+        <link type="text/css" rel="stylesheet" href="css/parcelas.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div id="navbar"><!-- Dinamically completed --></div>
+            <div class="row title">
+                <div class="offset-4 col col-4">
+                    <h1 class="text-center fs-2">Gestión de Parcelas</h1>
+                </div>
+            </div>
+            <div id="content">
+                <div class="action-buttons">
+                    <button>
+                        Nuevo Grupo
+                    </button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevaParcelaModal">
+                        Nueva Parcela
+                    </button>
+                </div>
+                <div>
+                    <div class="group-header">
+                        <button>
+                            Cerrar
+                        </button>
+                        <h2>
+                            Grupo: La Cañada
+                        </h2>
+                        <button>
+                            Resumen
+                        </button>
+                    </div>
+                    <div class="viñas">
+                        <ul>
+                            Viña: La Canada I
+                            <div class="plot-actions">
+                                <button>
+                                    Nueva Entrada
+                                </button>
+                                <button>
+                                    Modificar
+                                </button>
+                                <button>
+                                    Estadísticas
+                                </button>
+                            </div>
+                        </ul>
+                        <ul>
+                            Viña: La Canada II
+                            <div class="plot-actions">
+                                <button>
+                                    Nueva Entrada
+                                </button>
+                                <button>
+                                    Modificar
+                                </button>
+                                <button>
+                                    Estadísticas
+                                </button>
+                            </div>
+                        </ul>
+                        <ul>
+                            Viña: La Canada III
+                            <div class="plot-actions">
+                                <button>
+                                    Nueva Entrada
+                                </button>
+                                <button>
+                                    Modificar
+                                </button>
+                                <button>
+                                    Estadísticas
+                                </button>
+                            </div>
+                        </ul>
+                        <ul>
+                            Viña: Grande
+                            <div class="plot-actions">
+                                <button>
+                                    Nueva Entrada
+                                </button>
+                                <button>
+                                    Modificar
+                                </button>
+                                <button>
+                                    Estadísticas
+                                </button>
+                            </div>
+                        </ul>
+                        <ul>
+                            Viña: Pequeña I
+                            <div class="plot-actions">
+                                <button>
+                                    Nueva Entrada
+                                </button>
+                                <button>
+                                    Modificar
+                                </button>
+                                <button>
+                                    Estadísticas
+                                </button>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="group-header">
+                    <button>
+                        Abrir
+                    </button>
+                    <h2>
+                        Grupo: Valdeciervos
+                    </h2>
+                    <button>
+                        Resumen
+                    </button>
+                </div>
+                <div class="group-header">
+                    <button>
+                        Abrir
+                    </button>
+                    <h2>
+                        Grupo: Fueralmonte
+                    </h2>
+                    <button>
+                        Resumen
+                    </button>
+                </div>
+                <div class="group-header">
+                    <button>
+                        Abrir
+                    </button>
+                    <h2>
+                        Grupo: Alcubilla
+                    </h2>
+                    <button>
+                        Resumen
+                    </button>
+                </div>
+            </content>
+        </div>
+    </body>
+
+    <!-- Modal Nueva Parcela -->
+    <div class="modal fade" id="nuevaParcelaModal" tabindex="-1" aria-labelledby="nuevaParcelaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="nuevaParcelaModalLabel">Nueva Parcela</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                    <label for="parcelaId" class="form-label">ID</label>
+                    <input type="text" class="form-control" id="parcelaId" required>
+                    </div>
+                    <div class="mb-3">
+                    <label for="parcelaAlias" class="form-label">Alias</label>
+                    <input type="text" class="form-control" id="parcelaAlias" required>
+                    </div>
+                </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"
+    ></script>
+
+    <!-- Bootstrap -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous">
+    </script>
+
+    <!-- · Main scripts -->
+    <!-- requirements: jQuery -->
+    <script src="js/navbar.js"></script>
+    <!-- requirements: jQuery -->
+    <script src="js/parcelas.js"></script>
+</html>

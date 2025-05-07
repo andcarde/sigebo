@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SIGEBO  |  Lotes</title>
+        <link rel="icon" href="/img/barrica_rosa.ico" type="image/x-icon" />
+        <link type="text/css" rel="stylesheet" href="css/config2/general.css" />
+        <link type="text/css" rel="stylesheet" href="css/config2/navbar.css" />
+        <link type="text/css" rel="stylesheet" href="css/parcelas.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <ul data-page="inicio">
+                    <a href="/"><p>INICIO</p></a>
+                </ul>
+                <ul data-page="inventario">
+                    <a href="/inventario"><p>INVENTARIO</p></a>
+                </ul>
+                <ul data-page="busqueda">
+                    <button><p>BÚSQUEDA</p></button>
+                </ul>
+                <ul data-page="parcelas">
+                    <a href="/parcelas"><p>PARCELAS</p></a>
+                </ul>
+                <ul data-page="bodega">
+                    <a href="/bodega"><p>BODEGA</p></a>
+                </ul>
+                <ul class="nav-elem-close-session">
+                    <a href="/"><p>CERRAR SESIÓN</p></a>
+                </ul>
+            </nav>
+            <div class="row title">
+                <div class="offset-4 col col-4">
+                    <h1 class="text-center fs-2">Listado de Lotes</h1>
+                </div>
+            </div>
+            <div id="content">
+                <div class="action-buttons">
+                    <button>
+                        Nuevo Grupo
+                    </button>
+                    <button>
+                        Nueva Parcela
+                    </button>
+                </div>
+                <table class="table table-bordered mt-5">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">LOTE</th>
+                            <th scope="col">VOLUMEN</th>
+                            <th scope="col">FECHA DE CREACIÓN</th>
+                            <th scope="col">ESTADO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>L01/2024</td>
+                            <td>2000 L</td>
+                            <td>23/09/2024</td>
+                            <td>En el depósito A01</td>
+                        </tr>
+                        <tr>
+                            <td>L02/2024</td>
+                            <td>1752 L</td>
+                            <td>24/09/2024</td>
+                            <td>En el depósito A02</td>
+                        </tr>
+                        <tr>
+                            <td>L03/2024</td>
+                            <td>30/09/2024</td>
+                            <td>3842 L</td>
+                            <td>En el depósito B01</td>
+                        </tr>
+                        <tr>
+                            <td>L01/2023</td>
+                            <td>01/10/2024</td>
+                            <td>4000 L</td>
+                            <td>En el depósito B02</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </content>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+    ></script>
+    <script src="js/nabvar.js"></script>
+    <script src="js/parcelas.js"></script>
+</html>

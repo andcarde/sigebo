@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Trazabilidad del Vino</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 1rem;
+        }
+        h1 {
+            margin-bottom: 0.5rem;
+        }
+        details {
+            margin-left: 1rem;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trazabilidad del Vino</h1>
+    <p>ID de la salida del vino: <strong id="wine-id"></strong></p>
+    <div>Porcentajes de sus tipos de uvas y parcelas originales: <span id="wine-status"></span></div>
+
+    <section id="trace-container"></section>
+
+    <script>
+        // Ejemplo de datos simulados
+        const wineId = 123;
+        const wineStatus = "70% Albillo (Parcela A), 30% Maturana (Parcela B)";
+
+        // Estructura de datos simulada en forma de árbol:
+        // - type: 'wineOutput' | 'deposit' | 'entry'
+        // - name: nombre identificativo
+        // - children: array con nodos hijo (para depósitos e intermedios)
+        const traceData = {
+            type: "wineOutput",
+            name: `Salida de vino #${wineId}`,
+            children: [
+                {
+                    type: "deposit",
+                    name: "Depósito A",
+                    children: [
+                        {
+                            type: "entry",
+                            name: "Entrada Uva #101 (Parcela A, 70%)"
+                        },
+                        {
+                            type: "entry",
+                            name: "Entrada Uva #102 (Parcela A, 30%)"
+                        }
+                    ]
+                },
+                {
+                    type: "deposit",
+                    name: "Depósito B",
+                    children: [
+                        {
+                            type: "entry",
+                            name: "Entrada Uva #103 (Parcela B)"
+                        }
+                    ]
+                }
+            ]
+        };
+
+        // Construye recursivamente el árbol de detalles
+        function buildTrace(node) {
+            const details = document.createElement("details");
+
+            const summary = document.createElement("summary");
+            summary.textContent = node.name;
+            details.appendChild(summary);
+
+            if (node.children && node.children.length > 0) {
+                node.children.forEach(child => {
+                    const childDetails = buildTrace(child);
+                    details.appendChild(childDetails);
+                });
+            }
+            return details;
+        }
+
+        // Inicializar página
+        document.getElementById("wine-id").textContent = wineId;
+        document.getElementById("wine-status").textContent = wineStatus;
+
+        // Renderizar
+        const container = document.getElementById("trace-container");
+        container.appendChild(buildTrace(traceData));
+    </script>
+</body>
+</html>

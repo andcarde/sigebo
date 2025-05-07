@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wine Traceability</title>
+        <!-- import jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- import traze.css -->
+        <link rel="stylesheet" href="css/traze.css">
+        <!-- import traze.js -->
+        <script src="js/traze.js"></script>
+        <!-- import trazability-db.js -->
+        <script src="js/traze-db.js"></script>
+    </head>
+    <body>
+        <h1>Wine Traceability</h1>
+
+        <div class="traceability">
+            <div class="section">
+                <h2>Enter Wine ID:</h2>
+                <input type="text" id="traze-id" placeholder="Enter exit batch ID">
+                <button id="traze-search">Search</button>
+            </div>
+
+            <div class="section">
+                <h2>Current State of Wine:</h2>
+                <div id="traze-tree">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Wine Tree:</h2>
+                <ul id="wine-tree" class="tree">
+                    <!-- Populated dynamically -->
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

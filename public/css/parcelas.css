@@ -1,0 +1,91 @@
+
+
+/* · Parcelas · */
+
+/* Buttons */
+
+#content button {
+    background-color: #0073e6;
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#content button:hover {
+    background-color: #005bb5;
+}
+
+/* Group Headers */
+.group-header h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 20px 0 10px;
+}
+
+/* Viña Sections */
+
+.viñas ul {
+    padding: 10px;
+    margin: 10px 0;
+    list-style-type: none;
+    background-color: #f0f8ff;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.viñas ul button {
+    font-size: 14px;
+    padding: 6px 10px;
+}
+
+.viñas ul:hover {
+    background-color: #e0f0ff;
+}
+
+/* Contenedor para los botones de creación */
+
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.action-buttons button {
+    margin-left: 10px;
+}
+
+/* Contenedor para el encabezado de grupo */
+
+.group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.group-header h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+}
+
+.group-header button {
+    font-size: 14px;
+}
+
+/* Contenedor para los botones de acción de cada viña */
+.plot-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+}
